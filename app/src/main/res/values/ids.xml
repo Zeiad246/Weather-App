@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="mainContainer" type="id" />
+    <item name="hoursPageImage" type="id" />
+    <item name="addressContainer" type="id" />
+    <item name="hoursCurrentCondition" type="id" />
+</resources>
