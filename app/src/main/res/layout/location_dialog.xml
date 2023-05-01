@@ -45,7 +45,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName"
+                        android:id="@+id/latitudeBox"
                         android:layout_width="120dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center"
@@ -60,7 +60,7 @@
                         android:textSize="15sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName2"
+                        android:id="@+id/longitudeBox"
                         android:layout_width="120dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center"
@@ -75,7 +75,7 @@
                         android:textSize="15sp" />
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName3"
+                        android:id="@+id/timezoneBox"
                         android:layout_width="120dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center"

@@ -4,4 +4,5 @@
     <item name="hoursPageImage" type="id" />
     <item name="addressContainer" type="id" />
     <item name="hoursCurrentCondition" type="id" />
+    <item name="OpenButton" type="id" />
 </resources>

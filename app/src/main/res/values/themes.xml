@@ -19,8 +19,8 @@
     </style>
     <style name="Theme.Weather3.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.Weather3.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-<!--    <style name="dialoganimation">-->
-<!--        <item name="android:windowEnterAnimation">@anim/slidedown</item>-->
-<!--        <item name="android:windowExitAnimation">@anim/slideup</item>-->
-<!--    </style>-->
+    <style name="dialoganimation">
+        <item name="android:windowEnterAnimation">@anim/slidedown</item>
+        <item name="android:windowExitAnimation">@anim/slideup</item>
+    </style>
 </resources>

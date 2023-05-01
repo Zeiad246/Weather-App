@@ -13,8 +13,8 @@
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
-<!--    <style name="dialoganimation">-->
-<!--        <item name="android:windowEnterAnimation">@anim/slidedown</item>-->
-<!--        <item name="android:windowExitAnimation">@anim/slideup</item>-->
-<!--    </style>-->
+    <style name="dialoganimation">
+        <item name="android:windowEnterAnimation">@anim/slidedown</item>
+        <item name="android:windowExitAnimation">@anim/slideup</item>
+    </style>
 </resources>

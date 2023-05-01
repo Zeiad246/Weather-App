@@ -1,11 +1,15 @@
 package com.example.weather3
 
 import android.app.Dialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings.Global
+import android.text.Editable
 import android.util.Log
+import android.view.Gravity
+import android.view.Window
+import android.widget.Button
+import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weather3.WeatherData.DATACLASS
 import com.example.weather3.WeatherData.DayData
@@ -17,6 +21,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.TimeZone
 import kotlin.system.measureTimeMillis
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +42,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
+//    val lat = editText.getDouble()
+
+    lateinit var Lat : EditText
+    lateinit var Long : EditText
+    lateinit var Timezone : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,10 +78,32 @@ class MainActivity : AppCompatActivity() {
 
         showForecasts()
 
+        mainBinding.OpenButton.setOnClickListener {
+
+//            showDialog()
+
+        }
+
+
+
+
+
     }
-//    suspend fun showDialog() {
+
+//    fun EditText.getDouble(): Double = try {
+//        text.toString().toDouble()
+//    } catch (e: NumberFormatException) {
+//        e.printStackTrace()
+//        0.0
+//    }
+
+    fun EditText.toDouble() = toString().toDouble()
+
+    fun test() {
+
+    }
+//    fun showDialog() {
 //
-//        delay(1000L)
 //
 //        val dialog = Dialog(this@MainActivity)
 //        dialog.requestWindowFeature(
@@ -79,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 //        )
 //        dialog.setCancelable(false)
 //        dialog.setContentView(R.layout.location_dialog)
-////        dialog.window!!.attributes.windowAnimations=R.style.dialoganimation
+//        dialog.window!!.attributes.windowAnimations=R.style.dialoganimation
 //        var OkButton = dialog.findViewById<Button>(R.id.cancel_button)
 //
 //        dialog.window!!.setGravity(Gravity.TOP)
@@ -87,11 +119,18 @@ class MainActivity : AppCompatActivity() {
 //            dialog.dismiss()
 //        }
 //        dialog.show()
+//
+//        Lat = dialog.findViewById<EditText>(R.id.latitudeBox)
+//        Long = dialog.findViewById<EditText>(R.id.longitudeBox)
+//        Timezone = dialog.findViewById<EditText>(R.id.timezoneBox)
+//
+//
+//
+//
 //    }
 
 
     fun showForecasts(){
-//        delay(1000L)
 
         val retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
@@ -108,16 +147,18 @@ class MainActivity : AppCompatActivity() {
                 {
 
                     mainBinding.hoursHighestTemp.text = "error"
+                    Log.d("Test", "unsuccessful")
 
 
 
                 }else{
+                    Log.d("Test", "successful")
                     forecastData=response.body() as DATACLASS
 
 
 //                    runOnUiThread {
                         mainBinding.hoursHighestTemp.text = " " + forecastData.hourly.temperature_2m[3].toString() + "°"
-                        organizeForecastData(forecastData, daydata)
+                        organizeForecastData(forecastData)
 //                    }
 
 //                    GlobalScope.launch {
@@ -142,12 +183,15 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-        fun organizeForecastData(forecastData: DATACLASS, days :ArrayList<DayData>) {
+        fun organizeForecastData(forecastData: DATACLASS) {
             for (i in 0..6) {
                 var hoursList: ArrayList<HourData> = ArrayList()
                 for (j in 0..23) {
+                    var hour = forecastData.hourly.time[i * 24 + j]
+                    hour = hour.substring(hour.indexOf("T") + 1)
+
                     var hourdata = HourData(
-                        time = forecastData.hourly.time[i * 24 + j],
+                        time = hour,
                         temp = forecastData.hourly.temperature_2m[i * 24 + j],
                         pressure = forecastData.hourly.pressure_msl[i * 24 + j],
                         rain = forecastData.hourly.rain[i * 24 + j],
@@ -161,7 +205,7 @@ class MainActivity : AppCompatActivity() {
                     hoursList.add(hourdata)
                 }
 
-                var daydata = DayData(
+                var day = DayData(
                     time = forecastData.daily.time[i],
                     temp_max = forecastData.daily.temperature_2m_max[i],
                     temp_min = forecastData.daily.temperature_2m_min[i],
@@ -175,7 +219,8 @@ class MainActivity : AppCompatActivity() {
 
                     Hours = hoursList
                 )
-                days.add(daydata)
+                daydata.add(day)
+                Dadapter.notifyDataSetChanged()
             }
 
         }

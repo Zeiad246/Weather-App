@@ -1,5 +1,6 @@
 package com.example.weather3
 
+import android.text.Editable
 import com.example.weather3.WeatherData.DATACLASS
 import retrofit2.Call
 import retrofit2.http.GET
