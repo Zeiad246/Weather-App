@@ -4,5 +4,6 @@
     <item name="hoursPageImage" type="id" />
     <item name="addressContainer" type="id" />
     <item name="hoursCurrentCondition" type="id" />
-    <item name="OpenButton" type="id" />
+    <item name="SignOutButton" type="id" />
+    <item name="MainFragment" type="id" />
 </resources>

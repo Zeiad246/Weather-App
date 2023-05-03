@@ -11,6 +11,7 @@ data class DayData (
     var sunset: String,
     var precip_sum: Double,
     var rain_sum: Double,
+    var wind_max: Double,
     var weathercode: Int,
 
     var Hours:ArrayList<HourData>
@@ -20,10 +21,11 @@ data class DayData (
 data class HourData(
     var time: String,
     var temp: Double,
+    var app_temp: Double,
     var pressure: Double,
     var rain: Double,
     var humidity: Int,
-
+    var visibility: Double,
     var windspeed: Double,
     var winddirection: Int,
     var weathercode: Int,

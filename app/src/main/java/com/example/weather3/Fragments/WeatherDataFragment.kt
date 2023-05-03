@@ -1,4 +1,4 @@
-package com.example.weather3
+package com.example.weather3.Fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -8,8 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weather3.Adapters.DaysAdapter
 import com.example.weather3.WeatherData.DATACLASS
 import com.example.weather3.WeatherData.DayData
+import com.example.weather3.WeatherData.ForecastAPI
+import com.example.weather3.WeatherData.HourData
 
 import com.example.weather3.databinding.FragmentWeatherdataBinding
 import retrofit2.Call
@@ -25,12 +28,20 @@ class WeatherDataFragment : Fragment() {
     private val binding get()  = _binding!!
 
 
-    lateinit var recyclerView: RecyclerView
-    lateinit var Dadapter: DaysAdapter
 
+
+    val baseUrl = "https://api.open-meteo.com/"
     lateinit var forecastData : DATACLASS
     var daydata = ArrayList<DayData>()
 
+    lateinit var Dadapter: DaysAdapter
+
+
+
+
+    var lat: String? = ""
+    var long: String? = ""
+    var timezone: String? = ""
 
 
 
@@ -42,51 +53,31 @@ class WeatherDataFragment : Fragment() {
         _binding = FragmentWeatherdataBinding.inflate(inflater, container, false)
         val view = binding.root
 
-
-
-//        binding.DayCardsList.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+//        binding.DayCardsList.layoutManager = LinearLayoutManager(this.context)
 //        Dadapter = DaysAdapter(daydata)
 //        binding.DayCardsList.adapter = Dadapter
-//
-//        val retrofit = Retrofit.Builder()
-//            .baseUrl("https://api.open-meteo.com/")
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//
-//        val retrofitAPI : ForecastAPI = retrofit.create(ForecastAPI::class.java)
-//        val call : Call<DATACLASS> = retrofitAPI.getWeatherData(52.01, 51.00, "Africa/Cairo")
-//
-//            call.enqueue(object : Callback<DATACLASS>
-//            {
-//                override fun onResponse(call: Call<DATACLASS>, response: Response<DATACLASS>) {
-//                    if (!response.isSuccessful)
-//                    {
-//
-//
-//
-//
-//                    }else{
-//                        forecastData=response.body() as DATACLASS
-//
-//
-////                        organizeForecastData(forecastData, daydata)
-//
-//
-//
-//                    }
-//
-//                }
-//
-//                override fun onFailure(call: Call<DATACLASS>, t: Throwable) {
-//                    t.printStackTrace()
-//                    Log.e("Error", t.message.toString())
-//                }
-//
-//            })
+
+
+        lat = arguments?.getString("lat")!!
+        long = arguments?.getString("long")!!
+        timezone= arguments?.getString("timezone")!!
+
+binding.apply {
+    latitudeBox2.text = lat
+
+    longitudeBox2.text = long
+    timezoneBox2.text = timezone
+}
+
+
+
+//        showForecasts()
 
 
         return view
     }
+
+
 
 
 

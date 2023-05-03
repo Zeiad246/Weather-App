@@ -15,16 +15,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DayActivity"
+            android:exported="false"
+            android:label="@string/title_activity_day"
+            android:theme="@style/Theme.Weather3.NoActionBar" />
+        <activity
             android:name=".ForecastActivity"
             android:exported="false" />
         <activity
             android:name=".HourActivity"
             android:exported="false" />
-        <activity
-            android:name=".WeatherData.DayActivity"
-            android:exported="false"
-            android:label="@string/title_activity_day"
-            android:theme="@style/Theme.Weather3.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

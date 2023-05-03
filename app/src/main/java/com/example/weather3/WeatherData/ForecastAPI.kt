@@ -1,4 +1,4 @@
-package com.example.weather3
+package com.example.weather3.WeatherData
 
 import android.text.Editable
 import com.example.weather3.WeatherData.DATACLASS
@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ForecastAPI {
-    @GET("v1/forecast?&hourly_units=&hourly=temperature_2m&hourly=apparent_temperature&hourly=relativehumidity_2m&hourly=pressure_msl&hourly=windspeed_10m&hourly=winddirection_10m&hourly=rain&hourlyvisibility&hourly=weathercode&daily_units&daily=temperature_2m_max&daily=temperature_2m_min&daily=apparent_temperature_max&daily=apparent_temperature_min&daily=precipitation_sum&daily=rain_sum&daily=sunrise&daily=sunset&daily=windspeed_10m_max&daily=weathercode")
+    @GET("v1/forecast?latitude=30.06&longitude=31.25&https://api.open-meteo.com/v1/forecast?latitude=30.06&longitude=31.25&hourly_units=&hourly=temperature_2m&hourly=apparent_temperature&hourly=visibility&hourly=relativehumidity_2m&hourly=pressure_msl&hourly=windspeed_10m&hourly=winddirection_10m&hourly=rain&hourlyvisibility&hourly=weathercode&daily_units&daily=temperature_2m_max&daily=temperature_2m_min&daily=apparent_temperature_max&daily=apparent_temperature_min&daily=precipitation_sum&daily=rain_sum&daily=sunrise&daily=sunset&daily=windspeed_10m_max&daily=weathercode&timezone=Africa/Cairohourly_units=&hourly=temperature_2m&hourly=apparent_temperature&hourly=relativehumidity_2m&hourly=pressure_msl&hourly=windspeed_10m&hourly=winddirection_10m&hourly=rain&hourlyvisibility&hourly=weathercode&daily_units&daily=temperature_2m_max&daily=temperature_2m_min&daily=apparent_temperature_max&daily=apparent_temperature_min&daily=precipitation_sum&daily=rain_sum&daily=sunrise&daily=sunset&daily=windspeed_10m_max&daily=weathercode")
     fun getWeatherData(
         @Query("latitude") lat: Double,
         @Query("longitude") long: Double,

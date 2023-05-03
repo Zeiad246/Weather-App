@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="50dp"
-    android:layout_height="80dp"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp"
+    android:layout_height="240dp"
     android:layout_margin="4dp"
 
     >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/HourCardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         card_view:cardBackgroundColor="@android:color/transparent"
-        card_view:cardElevation="0dp">
+        card_view:cardElevation="0dp"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:layout_width="50dp"
-            android:layout_height="80dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@drawable/hour_card_design">
+
+            <TextView
+                android:id="@+id/hourTime"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:text="12 AM"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.0">
+
+            </TextView>
 
             <TextView
                 android:id="@+id/hourTemp"
@@ -26,31 +46,139 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="8dp"
                 android:gravity="center_horizontal"
-                android:text=" 20°"
+                android:text=" 20°C"
                 android:textColor="@color/white"
-                android:textSize="20sp">
+                android:textSize="25sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.13999999"
+                tools:layout_editor_absoluteX="0dp">
 
             </TextView>
 
             <TextView
-                android:id="@+id/hourTime"
+                android:id="@+id/hourApparentTemp"
                 android:layout_width="match_parent"
-                android:layout_height="28dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="45dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="12 AM"
-                android:textColor="@color/white"
-                android:textSize="14sp">
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:text=" 15°"
+                android:textColor="@color/greyer"
+                android:textSize="20sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.27999997"
+                tools:layout_editor_absoluteX="0dp">
 
             </TextView>
-        </RelativeLayout>
+
+            <TextView
+                android:id="@+id/hourHumidityBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text=" 60%"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.4"
+                tools:layout_editor_absoluteX="0dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/hoursPressureBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="99 hPa"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.497"
+                tools:layout_editor_absoluteX="0dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/hourWindSpeedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="15 km/p"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.59000003"
+                tools:layout_editor_absoluteX="0dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/hourWindDirectionBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text=" 70°"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.69"
+                tools:layout_editor_absoluteX="16dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/hourVisibilityBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text=" 24000 m"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.785"
+                tools:layout_editor_absoluteX="0dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/hourRainBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="10 mm "
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.89"
+                tools:layout_editor_absoluteX="0dp">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

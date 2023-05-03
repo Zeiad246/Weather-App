@@ -3,9 +3,9 @@ package com.example.weather3
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class HourActivity : AppCompatActivity() {
+class DayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hour)
+        setContentView(R.layout.activity_day)
     }
 }

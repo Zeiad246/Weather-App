@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.LocationFragment"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="400dp"
+            android:layout_height="180dp"
+            android:background="@drawable/hour_card_design"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:cardCornerRadius="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/SignOutButton"
+                android:layout_width="134dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/exit_button"
+                android:text="Sign Out"
+                android:textAllCaps="false">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:cardCornerRadius="16sp">
+
+                <EditText
+                    android:id="@+id/latitudeBox"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/edittextoutline"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Latitude"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/greyer"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/longitudeBox"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/edittextoutline"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Longitude"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/greyer"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/timezoneBox"
+                    android:layout_width="120dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/edittextoutline"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Timezone"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/greyer"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel_button"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="154dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="153dp"
+                android:background="@drawable/exit_button"
+                android:text="OK"
+                android:textAllCaps="false">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
+

@@ -1,101 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity"
+    android:id="@+id/mainlayout"
     android:background="@drawable/gradient">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/OpenButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/exit_button"
-        android:text="Location"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.00999999">
 
-    </androidx.appcompat.widget.AppCompatButton>
+    <!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/SignInButton"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:background="@drawable/exit_button"-->
+<!--            android:text="Sign In"-->
+<!--            android:textAllCaps="false"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.21"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.609">-->
+
+<!--        </androidx.appcompat.widget.AppCompatButton>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView5"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:text="Password"-->
+<!--            android:textColor="@color/white"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.31"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.33" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/PasswordBox"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="password"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textColorHint="@color/Dark_grey"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.502"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.39999998" />-->
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/SignUpButton"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:background="@drawable/exit_button"-->
+<!--            android:text="Sign Up"-->
+<!--            android:textAllCaps="false"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.7"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.607">-->
+
+<!--        </androidx.appcompat.widget.AppCompatButton>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:text="Email"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="15sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.31"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.179" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/EmailBox"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="ex: weather123@weather.com"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textColorHint="@color/Dark_grey"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.24000001" />-->
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/mainContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="204dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13">
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/OpenButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:background="@drawable/exit_button"-->
+<!--        android:text="Location"-->
+<!--        android:textAllCaps="false"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
+<!--    </androidx.appcompat.widget.AppCompatButton>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="205dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/hoursPageImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/addressContainer"
-                android:layout_width="185dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/hoursHighestTemp"
-                    android:layout_width="172dp"
-                    android:layout_height="100dp"
-                    android:gravity="center"
-                    android:text="20°"
-                    android:textColor="@color/white"
-                    android:textSize="60sp" />
-
-                <TextView
-                    android:id="@+id/hoursCurrentCondition"
-                    android:layout_width="185dp"
-                    android:layout_height="71dp"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/white"
-                    android:textSize="30sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--    <androidx.fragment.app.FragmentContainerView-->
     <!--        android:id="@+id/fragmentContainerView"-->
-    <!--        android:name="com.example.weather3.WeatherDataFragment"-->
+    <!--        android:name="com.example.weather3.Fragments.WeatherDataFragment"-->
     <!--        android:layout_width="wrap_content"-->
     <!--        android:layout_height="wrap_content"-->
     <!--        app:layout_constraintBottom_toBottomOf="parent"-->
@@ -106,31 +136,126 @@
     <!--        tools:layout="@layout/fragment_weatherdata"-->
     <!--        />-->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
+
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/DayCardsList"-->
+<!--            android:layout_width="391dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:foregroundGravity="top"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.98"-->
+<!--            tools:listitem="@layout/day_cards" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:text="Email"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:text="Password"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signUpButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/exit_button"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.607">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <EditText
+        android:id="@+id/emailBox"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="ex: weather123@weather.com"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/Dark_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95">
+        app:layout_constraintVertical_bias="0.24000001" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signInButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/exit_button"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.609">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/DayCardsList"
-            android:layout_width="391dp"
-            android:layout_height="420dp"
-            android:background="@android:color/transparent"
-            android:foregroundGravity="top"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.39"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.94"
-            tools:listitem="@layout/day_cards" />
+    </androidx.appcompat.widget.AppCompatButton>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <EditText
+        android:id="@+id/passwordBox"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/Dark_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39999998" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
