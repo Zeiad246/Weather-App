@@ -1,18 +1,26 @@
 package com.example.weather3.Adapters
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weather3.DayActivity
+import com.example.weather3.HourActivity
 import com.example.weather3.R
+import com.example.weather3.WeatherData.DayData
 import com.example.weather3.WeatherData.HourData
 
 class HoursAdapter (
 
-    var hourlydata: ArrayList<HourData>
+//    var days : ArrayList<DayData>,
+    var hourlydata: ArrayList<HourData>,
+    var context: Context
 
     ) : RecyclerView.Adapter<HoursAdapter.HoursViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoursViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
@@ -32,6 +40,10 @@ class HoursAdapter (
 
         val holderChild = hourlydata[position]
 
+
+
+//        val da = days
+
         holder.hourtime.text = holderChild.time
         holder.hourtemp.text = holderChild.temp.toString() + "°C"
         holder.hourAppTemp.text = holderChild.app_temp.toString() + "°C"
@@ -42,12 +54,40 @@ class HoursAdapter (
         holder.hourVisib.text = "V:  " + holderChild.visibility.toString() + "m"
         holder.hourRain.text = "R:  " + holderChild.rain.toString() + "mm"
 
+//        holder.childRecyclerView.setOnClickListener {
+//
+//            val intent = Intent(context, HourActivity::class.java)
+//
+//            intent.apply {
+//
+//                for (i in 0..6){
+//                    for (i in 0..23){
+//
+//                putExtra("hourtime", hourlydata[position].time)
+//                putExtra("hourtemp", hourlydata[position].temp)
+//                putExtra("hourApptemp", hourlydata[position].app_temp)
+//                putExtra("hourHumid", hourlydata[position].humidity)
+//                putExtra("hourPressure", hourlydata[position].pressure)
+//                putExtra("hourWindSpeed", hourlydata[position].windspeed)
+//                putExtra("hourWindDir", hourlydata[position].winddirection)
+//                putExtra("hourVisib", hourlydata[position].visibility)
+//                putExtra("hourRain", hourlydata[position].rain)
+//            }
+//
+//                }
+//            }
+//
+//            context.startActivity(intent)
+//        }
+//
     }
 
 
 
     inner class HoursViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
     {
+
+//        val childRecyclerView : RecyclerView = itemView.findViewById(R.id.childrecyclerview)
 
         var hourtime: TextView = itemView.findViewById(R.id.hourTime)
         var hourtemp: TextView = itemView.findViewById(R.id.hourTemp)

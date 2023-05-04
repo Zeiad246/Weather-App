@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DayActivity"
+    tools:context=".HourActivity"
     android:background="@drawable/gradient">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="336dp"
-        android:layout_height="301dp"
+        android:layout_width="208dp"
+        android:layout_height="308dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22000003">
+        app:layout_constraintVertical_bias="0.15">
 
         <TextView
             android:id="@+id/hoursTime"
@@ -29,67 +28,33 @@
             android:gravity="center"
             android:text="20°"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="40sp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/hoursTemp"
             android:layout_width="match_parent"
-            android:layout_height="185dp"
-            android:orientation="horizontal">
+            android:layout_height="143dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="13°"
+            android:textColor="@color/white"
+            android:textSize="100sp" />
 
-            <TextView
-                android:id="@+id/hoursHighestTemp"
-                android:layout_width="195dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="20°"
-                android:textColor="@color/white"
-                android:textSize="60sp" />
-
-            <TextView
-                android:id="@+id/hoursLowestTemp"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="13°"
-                android:textColor="@color/white"
-                android:textSize="60sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/hoursAppTemp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/hoursHighApparent"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="21°"
-                android:textColor="@color/light_grey"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/hoursLowApparent"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="14°"
-                android:textColor="@color/light_grey"
-                android:textSize="25sp" />
-
-        </LinearLayout>
+            android:layout_height="112dp"
+            android:gravity="center"
+            android:text="20°"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="401dp"
-        android:layout_height="309dp"
+        android:id="@+id/linearLayout3"
+        android:layout_width="390dp"
+        android:layout_height="300dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -99,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.95">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -107,43 +72,60 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView8"
-                android:layout_width="196dp"
+                android:id="@+id/textView22"
+                android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:gravity="center"
-                android:text="Sunrise"
+                android:text="Humidity"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView9"
-                android:layout_width="195dp"
+                android:id="@+id/textView42"
+                android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:gravity="center"
-                android:text="Sunset"
+                android:text="Rain"
                 android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="Pressure"
+                android:textColor="@color/white" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="121dp"
-            android:orientation="horizontal">
+            android:layout_height="103dp">
 
             <TextView
-                android:id="@+id/sunriseBox"
-                android:layout_width="195dp"
-                android:layout_height="match_parent"
+                android:id="@+id/hoursHumidBox"
+                android:layout_width="130dp"
+                android:layout_height="100dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/sunsetBox"
-                android:layout_width="197dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
+                android:id="@+id/hoursRain"
+                android:layout_width="130dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="TextView"
                 android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/hoursPressureBox"
+                android:layout_width="130dp"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/white" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -156,32 +138,35 @@
                 android:layout_width="130dp"
                 android:layout_height="30dp"
                 android:gravity="center"
-                android:text="Precipitation sum"
+                android:text="Visibility"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textView16"
                 android:layout_width="130dp"
                 android:layout_height="30dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:text="Rain sum"
+                android:text="Wind Direction"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView17"
                 android:layout_width="130dp"
                 android:layout_height="30dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:text="Windspeed max"
+                android:text="Wind Speed"
                 android:textColor="@color/white" />
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="390dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/hoursPresipSumBox"
+                android:id="@+id/hoursVisibilityBox"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -189,7 +174,7 @@
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/hoursRainSumBox"
+                android:id="@+id/hoursWindDir"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -197,12 +182,14 @@
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/hoursWindSpeedMaxBox"
-                android:layout_width="130dp"
+                android:id="@+id/hoursWindSpeed"
+                android:layout_width="204dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="TextView"
                 android:textColor="@color/white" />
+
         </LinearLayout>
     </LinearLayout>
 

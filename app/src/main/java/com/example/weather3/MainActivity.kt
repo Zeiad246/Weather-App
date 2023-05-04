@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity(){
                             val user = auth.currentUser
 
                             if (user != null){
-                                val intent = Intent(applicationContext, WeatherActivity::class.java)
+                                val intent = Intent(applicationContext, LocationActivity::class.java)
                                 startActivity(intent)
                             }
                         } else {

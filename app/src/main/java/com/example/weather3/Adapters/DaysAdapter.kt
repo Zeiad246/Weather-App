@@ -11,19 +11,26 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather3.DayActivity
+import com.example.weather3.HourActivity
 import com.example.weather3.R
+import com.example.weather3.WeatherActivity
+import com.example.weather3.WeatherData.DATACLASS
+import com.example.weather3.WeatherData.Daily
 import com.example.weather3.WeatherData.DayData
 import com.example.weather3.WeatherData.HourData
 
 class DaysAdapter(
 
     var daydata: ArrayList<DayData>,
+//    var hourdata: ArrayList<HourData>,
     var context: Context
 
 ) : RecyclerView.Adapter<DaysAdapter.DaysViewHolder>() {
 
 
-    var hourdata = ArrayList<HourData>()
+lateinit var inst : WeatherActivity
+lateinit var varss : DATACLASS
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DaysViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
@@ -40,6 +47,7 @@ class DaysAdapter(
     }
 
     override fun onBindViewHolder(holder: DaysViewHolder, position: Int) {
+
         val holderParent = daydata[position]
 
 
@@ -57,7 +65,7 @@ class DaysAdapter(
 
         holder.childRecyclerView.setHasFixedSize(true)
         holder.childRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
-        val adapter = HoursAdapter(holderParent.Hours)
+        val adapter = HoursAdapter(holderParent.Hours, context)
         holder.childRecyclerView.adapter = adapter
 
         holder.parentCard.setOnClickListener {
@@ -65,7 +73,17 @@ class DaysAdapter(
             val intent = Intent(context, DayActivity::class.java)
 
             intent.apply {
+
                 putExtra("daydate", daydata[position].time)
+                putExtra("dayhightemp", daydata[position].temp_max)
+                putExtra("daylowtemp", daydata[position].temp_min)
+                putExtra("dayAppTempHigh", daydata[position].apparent_temp_max)
+                putExtra("dayAppTempLow", daydata[position].apparent_temp_min)
+                putExtra("daySunrise", daydata[position].sunrise)
+                putExtra("daySunset", daydata[position].sunset)
+                putExtra("dayPrecipSum", daydata[position].precip_sum)
+                putExtra("dayWindMax", daydata[position].wind_max)
+                putExtra("dayRainSum", daydata[position].rain_sum)
 
             }
 
@@ -96,9 +114,74 @@ class DaysAdapter(
         }
 
 
+//        inst.organizeForecastData(varss)
+//        val hours = mapOf(daydata[position])
 
+//        val mapp = mutableMapOf<Int, ArrayList<HourData>>()
+//
+//        val v = ArrayList<HourData>()
+//
+//        mapp[position] = ArrayList<HourData>().
+
+//        holder.childRecyclerView.setOnClickListener {
+//
+//
+//
+//
+//            val intent = Intent(context, HourActivity::class.java)
+//
+//            for (i in daydata){
+//                for (j in hourdata){
+//
+//                    intent.apply {
+//
+//                        putExtra("hourtime", daydata[i].Hours[position].time)
+//                        putExtra("hourtemp", daydata[i].Hours[position].temp)
+//                        putExtra("hourApptemp", daydata[i].Hours[position].app_temp)
+//                        putExtra("hourHumid", daydata[i].Hours[position].humidity)
+//                        putExtra("hourPressure", daydata[i].Hours[position].pressure)
+//                        putExtra("hourWindSpeed", daydata[i].Hours[position].windspeed)
+//                        putExtra("hourWindDir", daydata[i].Hours[position].winddirection)
+//                        putExtra("hourVisib", daydata[i].Hours[position].visibility)
+//                        putExtra("hourRain", daydata[i].Hours[position].rain)
+//                    }
+//                }
+//
+//            }
+//
+//
+//
+//            context.startActivity(intent)
+//        }
+
+
+
+//    fun nums(daysss: DayData){
+//
+////        when (position){
+////            0 -> for(i in 0..23){
+////                daydata[position].Hours[i]
+////            }1 -> for(i in 24..47){
+////                daydata[position].Hours[i]
+////            }2 -> for(i in 48..71){
+////                daydata[position].Hours[i]
+////            }3 -> for(i in 72..95){
+////                daydata[position].Hours[i]
+////            }4 -> for(i in 96..119){
+////                daydata[position].Hours[i]
+////            }5 -> for(i in 120..133){
+////                daydata[position].Hours[i]
+////            }6 -> for(i in 134..23){
+////                daydata[position].Hours[i]
+////            }
+////        }
+//    }
 
     }
+
+//    interface Map<K, out V>{
+//
+//    }
 
     inner class DaysViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
     {

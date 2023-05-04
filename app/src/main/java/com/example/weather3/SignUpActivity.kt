@@ -51,7 +51,7 @@ class SignUpActivity : AppCompatActivity() {
                             if (user != null){
                                 Toast.makeText(applicationContext,"Sign Up Successful", Toast.LENGTH_SHORT).show()
 
-                                val intent = Intent(applicationContext, WeatherActivity::class.java)
+                                val intent = Intent(applicationContext, LocationActivity::class.java)
                                 startActivity(intent)
 
                             }

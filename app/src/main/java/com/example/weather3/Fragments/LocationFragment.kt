@@ -30,11 +30,32 @@ class LocationFragment : Fragment() {
         _binding = FragmentLocationBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        comm = requireActivity() as Communicator
 
-        val colat = binding.latitudeBox
-        val colong = binding.longitudeBox
-        val cotimezone = binding.timezoneBox
+        val bundle = arguments
+
+
+        fun main(){
+            val sampleObject: Any = "Sample Test!"
+
+            val cityname = bundle!!.getString("cityi")
+            val countryname = bundle!!.getString("countryi")
+
+            if (cityname is String && countryname is String){
+                binding.CityBox.text = cityname
+                binding.CountryBox.text = countryname
+            } else {
+                println("String is null")
+            }
+        }
+
+
+
+
+
+
+
+
+
 
 //        binding.cancelButton.setOnClickListener {
 //            comm.passData(colat.toString(), colong.toString(), cotimezone.toString())
